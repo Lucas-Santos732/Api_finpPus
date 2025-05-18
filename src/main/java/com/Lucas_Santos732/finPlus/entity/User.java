@@ -37,11 +37,12 @@ public class User {
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
-        name = "tb_users_roles",
-        joinColumns = @JoinColumn(name = "Id_User"),
+            name = "tb_users_roles",
+            joinColumns = @JoinColumn(name = "Id_User"),
             inverseJoinColumns = @JoinColumn(name = "Id_Role")
     )
     private Set<Role> roles;
+
     public User() {
     }
 
