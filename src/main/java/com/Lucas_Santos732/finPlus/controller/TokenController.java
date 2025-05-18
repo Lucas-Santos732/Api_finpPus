@@ -27,7 +27,7 @@ public class TokenController {
 
     private final UserRepository userRepository;
 
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     public TokenController(JwtEncoder jwtEncoder,
                            UserRepository userRepository,
@@ -65,12 +65,6 @@ public class TokenController {
 
        return ResponseEntity.ok(new LoginAccessUserDto(jwtValue, expiresIn));
 
-    }
-    @GetMapping("/users")
-    @PreAuthorize("hasAuthority('SCOPE_admin')")
-    public ResponseEntity<List<User>> listUsers() {
-        var users = userRepository.findAll();
-        return ResponseEntity.ok(users);
     }
 
 }

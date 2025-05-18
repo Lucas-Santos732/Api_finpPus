@@ -28,3 +28,6 @@ Dockerfile*
 # Ambiente
 .env
 *.env
+/src/main/resources/app.key
+/src/main/resources/app.pub
+/src/main/resources/application-dev.properties
